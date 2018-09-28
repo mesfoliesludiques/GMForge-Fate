@@ -1,0 +1,135 @@
+<div class="flex flexcolumn fate_charsheet">
+  <div class="flexrow">
+    <div class="flex flexcolumn">
+      <div class="flexrow">
+        <div class="flex flexcolumn">
+          <h1>ID</h1>
+        </div>
+      </div>
+      <div class="flex flexrow">
+        <div class="flex flexcolumn">
+          <div class="fs_frame">
+            <input class="fs_field" type="text" placeholder="Name" target="info.name"/>
+          </div>
+          <div class="flex fs_frame">
+            <textarea class="flex fs_field" placeholder="Description" target="info.description"/>
+          </div>
+        </div>
+        <div class="flexcolumn fs_frame fs_refresh">
+          <div class="flexrow">
+            Refresh
+          </div>
+          <div class="flexrow">
+            <input class="fs_field" type="number" target="info.refresh"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flexcolumn fs_portrait">
+      <ui name="ui_image"/>
+    </div>
+  </div>
+  <div class="flexrow">
+    <div class="flex flexcolumn">
+      <div class="flexrow">
+      <h1 class="flex">Aspects</h1>
+      <span class="glyphicon glyphicon-plus hover">
+      <click>
+        <create type="aspect" target="aspects"/>
+      </click>
+    </span>
+    </div>
+      <div class="flexrow">
+        <div class="flexcolumn fs_skill_column">
+        <list target="aspects">
+          <div class="flexrow">
+            <div class="flex flexcolumn fs_item">
+            <span class="hover">eval{'@%path%.info.name'}</span>
+            <span class="fs_tooltip" cond="eval{'@%path%.info.notes' != '0'}">eval{'@%path%.info.notes'}</span>
+            <click>
+              <change target="aspects.%index%"/>
+            </click>
+          </div>
+          <div class="flexcolumn">
+            <span class="glyphicon glyphicon-trash hover2 spadding"></span>
+            <click>
+              <prompt title="Confirmation">
+                <div class="margin padding">Do you want to delete <b>eval{@%path%.info.name}</b>?</div>
+                <delete target="aspects.%index%"></delete>
+              </prompt>
+            </click>
+          </div>
+        </div>
+          </div>
+        </list>
+      </div>
+      </div>
+    <div class="flex flexcolumn">
+      <div class="flexrow">
+      <h1 class="flex">Skills</h1>
+    </div>
+    <div class="flexrow fs_skill_column">
+      <list></list>
+    </div>
+    </div>
+  </div>
+  <div class="flexrow">
+    <div class="flex flexcolumn">
+      <div class="flexrow">
+      <h1 class="flex">Extras</h1>
+    </div>
+      <div class="flexrow fs_skill_column">
+        <list></list>
+      </div>
+    </div>
+    <div class="flex flexcolumn">
+      <div class="flexrow">
+      <h1 class="flex">Stunts</h1>
+    </div>
+      <div class="flexrow fs_skill_column">
+        <list></list>
+      </div>
+    </div>
+  </div>
+  <div class="flexrow">
+    <div class="flex flexcolumn">
+      <div class="flexrow">
+        <h1 class="flex">Physical Stress (Physique)</h1>
+      </div>
+      <div class="flexrow flexmiddle">
+        <div class="flexcolumn fs_box">
+          <div>1</div>
+        </div>
+        <div class="flexcolumn fs_box">
+          <div>2</div>
+        </div>
+        <div class="flexcolumn fs_box">
+          <div>3</div>
+        </div>
+        <div class="flexcolumn fs_box">
+          <div>4</div>
+        </div>
+      </div>
+      <div class="flexrow">
+        <h1 class="flex">Mental Stress (Will)</h1>
+      </div>
+      <div class="flexrow flexmiddle">
+        <div class="flexcolumn fs_box">
+          <div>1</div>
+        </div>
+        <div class="flexcolumn fs_box">
+          <div>2</div>
+        </div>
+        <div class="flexcolumn fs_box">
+          <div>3</div>
+        </div>
+        <div class="flexcolumn fs_box">
+          <div>4</div>
+        </div>
+      </div>
+    </div>
+    <div class="flex2 flexcolumn">
+      <h1>Consequences</h1>
+    </div>
+  </div>
+</div>
